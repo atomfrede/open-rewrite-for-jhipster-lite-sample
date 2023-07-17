@@ -1,0 +1,25 @@
+initscript {
+    repositories {
+        maven(url="https://plugins.gradle.org/m2")
+    }
+
+    dependencies {
+        classpath("org.openrewrite:plugin:6.1.16")
+    }
+}
+
+rootProject {
+//    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    apply(plugin="org.openrewrite.rewrite")
+
+//    rewrite {
+//        activeRecipe("com.yourorg.AddDependencyExample")
+//    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}

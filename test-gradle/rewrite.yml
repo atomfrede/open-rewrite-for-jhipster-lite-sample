@@ -12,5 +12,5 @@ recipeList:
           onlyIfUsing: org.junit.jupiter.api.*
           classifier: test
           extension: jar
-          familyPattern: com.fasterxml.jackson*
+#          familyPattern: com.fasterxml.jackson*
           acceptTransitive: true
