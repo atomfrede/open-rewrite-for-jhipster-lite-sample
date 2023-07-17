@@ -1,0 +1,16 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.AddDependencyExample
+displayName: Add Gradle dependency example
+recipeList:
+    - org.openrewrite.gradle.AddDependency:
+          groupId: com.google.guava
+          artifactId: guava
+          version: 29.X
+          versionPattern: '-jre'
+          configuration: implementation
+          onlyIfUsing: org.junit.jupiter.api.*
+          classifier: test
+          extension: jar
+          familyPattern: com.fasterxml.jackson*
+          acceptTransitive: true
